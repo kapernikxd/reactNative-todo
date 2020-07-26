@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { View, StyleSheet, TextInput, Button, Alert } from 'react-native'
+import { THEME } from '../theme'
 
 export const AddTodo = ({ onSubmit }) => {
   const [value, setValue] = useState('')
@@ -9,7 +10,7 @@ export const AddTodo = ({ onSubmit }) => {
       onSubmit(value)
       setValue('')
     } else {
-      Alert.alert('Названия дела не может быть пустым')
+      Alert.alert('Название дела не может быть пустым')
     }
   }
 
@@ -31,18 +32,15 @@ export const AddTodo = ({ onSubmit }) => {
 const styles = StyleSheet.create({
   block: {
     flexDirection: 'row',
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
     alignItems: 'center',
-    marginTop: 10,
+    marginBottom: 15
   },
   input: {
-    width: '60%',
+    width: '70%',
     padding: 10,
     borderStyle: 'solid',
     borderBottomWidth: 2,
-    borderBottomColor: '#3949ab',
-    fontSize:24,
-    
-  },
-
+    borderBottomColor: THEME.MAIN_COLOR
+  }
 })
